@@ -75,7 +75,7 @@ export default function Chat() {
                 icon: "https://cdn-icons-png.flaticon.com/512/3574/3574820.png",
                 label: "Sample Prompt 2",
                 prompt:
-                  "Look at what I rented before and try to recommend me a romantic movie to watch with my boyfriend tonight.",
+                  "Look at what I rented before and try to recommend me a romantic movie to watch with my partner tonight.",
               },
               {
                 icon: "https://cdn-icons-png.flaticon.com/512/16286/16286224.png",
