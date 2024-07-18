@@ -6,10 +6,10 @@ import {
   ChatAdapter,
   StreamingAdapterObserver,
 } from "@nlux/react";
-import useWindowDimensions from "./useWindowDimensions";
 
 export default function Chat() {
-  const { width, height } = useWindowDimensions();
+  const { width, height } = getWindowDimensions();
+  console.log(height, width);
 
   const chatAdapter: ChatAdapter = {
     streamText: async (prompt: string, observer: StreamingAdapterObserver) => {
@@ -117,4 +117,16 @@ export default function Chat() {
       </div>
     </main>
   );
+}
+
+function getWindowDimensions() {
+  if (typeof window === "undefined") {
+    return { width: 0, height: 0 };
+  }
+
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
 }
