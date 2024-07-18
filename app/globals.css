@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nlux-comp-composer > textarea {
+  overflow: hidden !important;
+}
+
+.nlux-conversationStarters-container {
+  overflow: hidden !important;
+}
