@@ -8,9 +8,6 @@ import {
 } from "@nlux/react";
 
 export default function Chat() {
-  const { width, height } = getWindowDimensions();
-  console.log(height, width);
-
   const chatAdapter: ChatAdapter = {
     streamText: async (prompt: string, observer: StreamingAdapterObserver) => {
       const response = await fetch("/api/chat", {
@@ -55,8 +52,7 @@ export default function Chat() {
           adapter={chatAdapter}
           displayOptions={{
             colorScheme: "dark",
-            height: height - 150,
-            width,
+            height: 1200,
           }}
           personaOptions={{
             assistant: {
@@ -117,16 +113,4 @@ export default function Chat() {
       </div>
     </main>
   );
-}
-
-function getWindowDimensions() {
-  if (typeof window === "undefined") {
-    return { width: 0, height: 0 };
-  }
-
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
 }
