@@ -58,9 +58,11 @@ export async function POST(req: Request) {
 
     const criteria: SearchCriteria = JSON.parse(resp);
     // Filter correct rating
-    recommendedFilms = recommendedFilms.filter(
-      (film) => film.rating === criteria.rating
-    );
+    if (criteria.rating) {
+      recommendedFilms = recommendedFilms.filter(
+        (film) => film.rating === criteria.rating
+      );
+    }
   } catch (e) {
     console.log("Could not parse llm response skipping extra filter", e);
   }
